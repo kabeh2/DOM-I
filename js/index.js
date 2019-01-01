@@ -92,3 +92,45 @@ ctaBtn.addEventListener("click", e => {
     // e.target.style.color = "initial";
   }
 });
+
+//////////////////////////////////////////
+///////////// === MAIN-CONTENT ===
+
+const topContentH4 = document.querySelectorAll("h4");
+const mainH4Keys = Object.keys(siteContent["main-content"]).filter(keys => {
+  return keys.includes("h4");
+});
+
+topContentH4.forEach((el, i) => {
+  topContentH4[i].textContent = siteContent["main-content"][mainH4Keys[i]];
+});
+
+const mainContentP = document.querySelectorAll("p");
+const mainPKeys = Object.keys(siteContent["main-content"]).filter(key =>
+  key.includes("content")
+);
+
+mainContentP.forEach((el, i) => {
+  mainContentP[i].textContent = siteContent["main-content"][mainPKeys[i]];
+});
+
+const mainImg = document.querySelector(".main-content img");
+mainImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+//////////////////////////////////////////
+///////////// === CONTACT ===
+
+const contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent["contact"]["contact-h4"];
+
+const contactInfo = document.querySelectorAll(".contact p");
+contactInfo.forEach((el, i) => {
+  contactInfo[i].textContent =
+    siteContent["contact"][`${Object.keys(siteContent["contact"])[i + 1]}`];
+});
+
+//////////////////////////////////////////
+///////////// === FOOTER ===
+
+const pageFooter = document.querySelector("footer p");
+pageFooter.textContent = siteContent["footer"]["copyright"];
