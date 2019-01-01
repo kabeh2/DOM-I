@@ -83,16 +83,6 @@ ctaH1.textContent = siteContent["cta"]["h1"];
 const ctaBtn = document.querySelector(".cta .cta-text button");
 ctaBtn.textContent = siteContent["cta"]["button"];
 
-ctaBtn.addEventListener("click", e => {
-  if (ctaH1.style.color === "initial") {
-    ctaH1.style.color = "limegreen";
-    // e.target.style.color = "limegreen";
-  } else {
-    ctaH1.style.color = "initial";
-    // e.target.style.color = "initial";
-  }
-});
-
 //////////////////////////////////////////
 ///////////// === MAIN-CONTENT ===
 
